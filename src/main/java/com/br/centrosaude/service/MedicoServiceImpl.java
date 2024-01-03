@@ -37,7 +37,7 @@ public class MedicoServiceImpl implements MedicoService {
 
     @Override
     public Medico editarMedico(Medico medico) {
-        Medico novoMedico = findById(medico.getId());
+       Medico novoMedico = findById(medico.getId());
        novoMedico.setNome(medico.getNome());
        novoMedico.setCrm(medico.getCrm());
        novoMedico.setConsultas(medico.getConsultas());

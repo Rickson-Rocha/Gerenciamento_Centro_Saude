@@ -1,6 +1,7 @@
 package com.br.centrosaude.model.consulta;
 
 import java.time.LocalTime;
+import java.util.Optional;
 
 import com.br.centrosaude.model.medico.Medico;
 import com.br.centrosaude.model.paciente.Paciente;
@@ -32,13 +33,11 @@ public class Consulta {
     private Long id;
 
     @NotNull
-    @Column(name="medico_id")
     @ManyToOne
     @JoinColumn(name = "medico_id")
     private Medico medico;
 
     @NotNull
-    @Column(name = "paciente_id")
     @ManyToOne
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
@@ -49,10 +48,9 @@ public class Consulta {
 
     @NotNull
     @Column(name = "data_consulta")
-
-
     private LocalTime dataConsulta;
     @NotNull
     @Column(name = "prescricao")
     private String prescricao;
+    
 }

@@ -18,6 +18,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.validation.constraints.Digits;
 
 @Entity(name = "tb_paciente")
 @Table(name = "tb_paciente")
@@ -39,11 +40,12 @@ public class Paciente  implements Serializable{
 
     @NotNull
     @Column(name = "cpf", unique = true)
+    @Digits(integer = 11, fraction = 0, message = "O CPF deve conter apenas dígitos")
     private String cpf;
 
     @NotNull
     private String historicoMedico;
 
-    @OneToMany(mappedBy = "consulta")
+    @OneToMany(mappedBy = "paciente")
     private List<Consulta> consulta;
 }
