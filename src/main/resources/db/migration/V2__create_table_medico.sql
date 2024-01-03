@@ -1,0 +1,6 @@
+CREATE TABLE tb_medico (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(50) NOT NULL,
+    crm VARCHAR(30) UNIQUE NOT NULL
+);
