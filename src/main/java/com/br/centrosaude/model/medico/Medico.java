@@ -1,10 +1,15 @@
 package com.br.centrosaude.model.medico;
 
+import java.util.List;
+
+import com.br.centrosaude.model.consulta.Consulta;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -38,4 +43,7 @@ public class Medico {
     @NotNull
     @Column(name = "crm", unique = true)
     private String crm;
+
+    @OneToMany(mappedBy = "medico")
+    private List<Consulta> consultas;
 }

@@ -1,12 +1,16 @@
 package com.br.centrosaude.model.paciente;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.br.centrosaude.model.consulta.Consulta;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -39,4 +43,7 @@ public class Paciente  implements Serializable{
 
     @NotNull
     private String historicoMedico;
+
+    @OneToMany(mappedBy = "consulta")
+    private List<Consulta> consulta;
 }
